@@ -30,6 +30,8 @@ function Question({ category, difficulty, user}) {
   const [newLeaderEntryPatch, setNewLeaderEntryPatch] = useState(null);
   const [allLeaderEntries, setAllLeaderEntries] = useState(null);
   const [resultsArray, setResultsArray] = useState([]);
+  const [allData, setAllData] = useState(null);
+
 
 
 
@@ -50,11 +52,11 @@ function Question({ category, difficulty, user}) {
 // this function creates an array of objects, with each object having two properties, the correct answers and incorrect answers
   function hello(api) {
     if(api.results.length === 0) {
-      // make an alert that says sorry no quiz for this level
-      alert("Unfortunately There Is No Quiz For This Level, Try Another Level!");
-
+      // alert("Unfortunately There Is No Quiz For This Level, Try Another Level!");
+      setAllData(api)
       return;
     }
+
     console.log("this is the api ", api)
     // const onlyQuestions = api.results.map((obj) => ({question: obj.question}))
     const onlyQuestions = api.results.map(obj => obj.question)
@@ -424,184 +426,185 @@ console.log("scooooorer ", score)
 
   return (
 		<div className="question-container">
-			{showScore && attempt ? (
-        <div>
-				<div className='score-section'>
-					You scored {score} out of 10!
-				</div>
-        <br></br>
-        {/* <strong>Attempt number: {attempt.id}</strong><br></br>
-        <strong>The average score from all players for this game is: {averageScore}</strong><br></br>
-        <strong>The high score from all players for this game is: {highScore}</strong><br></br>
-        <strong>Your personal high score is: {personalHighScore}</strong><br></br>
-        <strong>Your personal average is: {personalAverage}</strong> */}
+			{showScore && attempt &&
+ <div>
+ <div className='score-section'>
+   You scored {score} out of 10!
+ </div>
+ <br></br>
+ {/* <strong>Attempt number: {attempt.id}</strong><br></br>
+ <strong>The average score from all players for this game is: {averageScore}</strong><br></br>
+ <strong>The high score from all players for this game is: {highScore}</strong><br></br>
+ <strong>Your personal high score is: {personalHighScore}</strong><br></br>
+ <strong>Your personal average is: {personalAverage}</strong> */}
 
-        <div className="answer-results">
-        {resultsArray.map(r => r.yourWrongAnswer === undefined ? <div className="correct"><br></br>
-        {resultsArray.indexOf(r) + 1}. {r.question} <br></br><br></br> CORRECT, IT'S  "{r.answer}"<br></br></div> : <div className="incorrect"><br></br>
-        {resultsArray.indexOf(r) + 1}. {r.question} <br></br><br></br> You Chose "{r.yourWrongAnswer}".
-        But you're WRONG, Stupid! The correct answer is "{r.answer}"<br></br></div>)}
-        </div>
+ <div className="answer-results">
+ {resultsArray.map(r => r.yourWrongAnswer === undefined ? <div className="correct"><br></br>
+ {resultsArray.indexOf(r) + 1}. {r.question} <br></br><br></br> CORRECT, IT'S  "{r.answer}"<br></br></div> : <div className="incorrect"><br></br>
+ {resultsArray.indexOf(r) + 1}. {r.question} <br></br><br></br> You Chose "{r.yourWrongAnswer}".
+ But you're WRONG, Stupid! The correct answer is "{r.answer}"<br></br></div>)}
+ </div>
 
-        <br></br>
-        <br></br>
-        <br></br>
+ <br></br>
+ <br></br>
+ <br></br>
 
-        <div className="entire-board">
-        <h2 className="title">Player Leaderboard</h2>
+ <div className="entire-board">
+ <h2 className="title">Player Leaderboard</h2>
 
-        {/* <div>
-          {resultsArray.map(r => r.yourWrongAnswer === undefined ? <p>{r.question + " " + r.answer}</p> : <p>{r.question + " " + r.yourWrongAnswer + " WRONG, IT'S " + r.answer}</p>)}
-        </div> */}
+ {/* <div>
+   {resultsArray.map(r => r.yourWrongAnswer === undefined ? <p>{r.question + " " + r.answer}</p> : <p>{r.question + " " + r.yourWrongAnswer + " WRONG, IT'S " + r.answer}</p>)}
+ </div> */}
 
-        <table>
+ <table>
 
-        <thead>
-        <tr>
-          <th class="rank">Rank</th>
-          <th>Player</th>
-          {/* <th onClick={sortByHighScore}>High Score</th> */}
-          {/* <th onClick={sortByHighestAverage}>Average Score(rn shows high score)</th> */}
-          <th></th>
-          <th onClick={sortByHighestCumulative} class="combined">Combined Score</th>
-          </tr>
-      </thead>
+ <thead>
+ <tr>
+   <th class="rank">Rank</th>
+   <th>Player</th>
+   {/* <th onClick={sortByHighScore}>High Score</th> */}
+   {/* <th onClick={sortByHighestAverage}>Average Score(rn shows high score)</th> */}
+   <th></th>
+   <th onClick={sortByHighestCumulative} class="combined">Combined Score</th>
+   </tr>
+</thead>
 
-      {allLeaderEntries.sort((a, b) => a.cumulative_score - b.cumulative_score).reverse().map(entry => <tr>
-        <td class="rank">{allLeaderEntries.indexOf(entry) + 1}</td>
-        <td>{entry.user.username}</td>
-        <td>-----------------------------------------------------------------></td>
-        {/* <td>{entry.high_score}</td> */}
-        <td class="combined">{entry.cumulative_score}</td>
-        </tr>).slice(0, 15)}
+{allLeaderEntries.sort((a, b) => a.cumulative_score - b.cumulative_score).reverse().map(entry => <tr>
+ <td class="rank">{allLeaderEntries.indexOf(entry) + 1}</td>
+ <td>{entry.user.username}</td>
+ <td>-----------------------------------------------------------------></td>
+ {/* <td>{entry.high_score}</td> */}
+ <td class="combined">{entry.cumulative_score}</td>
+ </tr>).slice(0, 15)}
 
-      {/* <tr>
-      <td>1</td>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-  </tr>
+{/* <tr>
+<td>1</td>
+<td>Alfreds Futterkiste</td>
+<td>Maria Anders</td>
+<td>Germany</td>
+</tr>
 
-  <tr>
-    <td>2</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-    <td>Mexico</td>
-  </tr>
+<tr>
+<td>2</td>
+<td>Francisco Chang</td>
+<td>Mexico</td>
+<td>Mexico</td>
+</tr>
 
-  <tr><td>3</td></tr>
-  <tr><td>4</td></tr>
-  <tr><td>5</td></tr>
-  <tr><td>6</td></tr>
-  <tr><td>7</td></tr>
-  <tr><td>8</td></tr>
-  <tr><td>9</td></tr>
-  <tr><td>10</td></tr> */}
-
-
-
-  </table>
-
-      </div>
-
-        <h1>Compare your score with the TriviApp Graph!</h1>
-        <div class="buttony">
-      <div>Your Score</div>
-      <div>Your High Score</div>
-      <div>Average TriviApp score</div>
-      <div>Your Average Score</div>
-
-    </div>
-  <div class="chart-container">
+<tr><td>3</td></tr>
+<tr><td>4</td></tr>
+<tr><td>5</td></tr>
+<tr><td>6</td></tr>
+<tr><td>7</td></tr>
+<tr><td>8</td></tr>
+<tr><td>9</td></tr>
+<tr><td>10</td></tr> */}
 
 
-    <div class="base"></div>
 
-    <ul class="meter">
-      <li><div>8</div></li>
-      <li><div>6</div></li>
-      <li><div>4</div></li>
-      <li><div>2</div></li>
-      <li><div>0</div></li>
+</table>
 
-    </ul>
+</div>
 
-    <table>
-      <tr>
-        {/* <button>heee</button> */}
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        {/* <td></td>
-        <td></td>
-        <td></td>
-        <td>hey</td> */}
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        {/* <td></td>
-        <td></td>
-        <td></td>
-        <td></td> */}
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        {/* <td></td>
-        <td></td>
-        <td></td>
-        <td></td> */}
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        {/* <td></td>
-        <td></td>
-        <td></td>
-        <td></td> */}
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        {/* <td></td>
-        <td></td>
-        <td></td>
-        <td></td> */}
-      </tr>
-      </table>
+ <h1>Compare your score with the TriviApp Graph!</h1>
+ <div class="buttony">
+<div>Your Score</div>
+<div>Your High Score</div>
+<div>Average TriviApp score</div>
+<div>Your Average Score</div>
 
-    <div class="barnard">
-      <div class="bar one" style={{height: scory}}></div>
-      <div class="bar two" style={{height: personalHighScory}}></div>
-      <div class="bar three" style={{height: averageScory}}></div>
-      <div class="bar four" style={{height: personalAveragy}}></div>
-    </div>
+</div>
+<div class="chart-container">
 
-    {/* <div class="bar five"></div>
-    <div class="bar six"></div>
-    <div class="bar seven">jijiji</div>
-    <div class="bar eight"></div> */}
-  </div>
+
+<div class="base"></div>
+
+<ul class="meter">
+<li><div>8</div></li>
+<li><div>6</div></li>
+<li><div>4</div></li>
+<li><div>2</div></li>
+<li><div>0</div></li>
+
+</ul>
+
+<table>
+<tr>
+ {/* <button>heee</button> */}
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ {/* <td></td>
+ <td></td>
+ <td></td>
+ <td>hey</td> */}
+</tr>
+<tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ {/* <td></td>
+ <td></td>
+ <td></td>
+ <td></td> */}
+</tr>
+<tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ {/* <td></td>
+ <td></td>
+ <td></td>
+ <td></td> */}
+</tr>
+<tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ {/* <td></td>
+ <td></td>
+ <td></td>
+ <td></td> */}
+</tr>
+<tr>
+ <td></td>
+ <td></td>
+ <td></td>
+ <td></td>
+ {/* <td></td>
+ <td></td>
+ <td></td>
+ <td></td> */}
+</tr>
+</table>
+
+<div class="barnard">
+<div class="bar one" style={{height: scory}}></div>
+<div class="bar two" style={{height: personalHighScory}}></div>
+<div class="bar three" style={{height: averageScory}}></div>
+<div class="bar four" style={{height: personalAveragy}}></div>
+</div>
+
+{/* <div class="bar five"></div>
+<div class="bar six"></div>
+<div class="bar seven">jijiji</div>
+<div class="bar eight"></div> */}
+</div>
 
 <br></br>
 <br></br>
 
-  <div>
-    <Link to="/Categories">Play Again!</Link>
-  </div>
+<div>
+<Link to="/Categories">Play Again!</Link>
+</div>
 
-        </div>
-			) : (
+ </div>
+      }
+      {showScore === false && allData === null &&
 				<>
 					<div className='question-section'>
 						<div className='question-count'>
@@ -616,9 +619,26 @@ console.log("scooooorer ", score)
 						))}
 					</div>
 				</>
-			)}
+      }
+      {allData !== null &&
+      <div>
+        <h1>Aloha!!</h1>
+        <h4>I'm so sorry that you've arrived at this page. It appears the quiz you've clicked on is unavailable. If your
+          urge to test your trivia is still blazing, go back and try a different cateogry or level. Otherwise, feel free
+          to click on one of these links to be directed to some material related to {category === 13 ? "musicals and theater" : category === 30 ? "gadgets" : "whatever"} :)</h4>
+          <div>{category === 13 ? <a href="https://www.w3schools.com/">Visit W3Schools.com</a> : category === 19 ? <a href="https://www.mathgames.com/">Math Games!</a> : "jejeje"}</div>
+        </div>
+      }
+
+        {/* {allData.results.length !== 0 &&
+          <h1>what is up with this crap</h1>
+        } */}
+
+
+
+
 		</div>
-	);
+	)
 }
 
 export default Question
