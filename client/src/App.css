@@ -36,3 +36,59 @@
     transform: rotate(360deg);
   }
 }
+
+.cards {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  box-shadow: 0 0 7px 0 #ddd;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  width: 300px;
+  text-align: center;
+}
+
+.difficulty-level-button {
+  border-radius: 4px;
+  background-color:#d35400;
+  border: none;
+  padding: 10px;
+  margin: 2px;
+  transition: all 0.5s;
+}
+
+.difficulty-level-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.difficulty-level-button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.difficulty-level-button:hover span {
+  padding-right: 25px;
+}
+
+.difficulty-level-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.triviapp {
+  font-style: oblique;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #d35400;
+}

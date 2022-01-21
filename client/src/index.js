@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route } from "react-router-dom";
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App Route={Route}/>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
