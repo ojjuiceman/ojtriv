@@ -21,11 +21,15 @@ console.log("thats that user tho ", user)
 
   return(
   <nav className = "navBar">
-    {/* <h1 className="triviapp">TriviApp</h1> */}
+    {/* <div className="triviapp">TriviApp</div> */}
+    <div className="log">
             {user && <button className="logout-button" onClick={handleLogoutClick}>
             <Link className="hello" to="/Registration" >Logout</Link>
             </button>}
-            {user ? (<h1>Hi {user.username}!</h1>) : (<h1>{''}</h1>)}
+            </div>
+            <div className="triviapp">TriviApp</div>
+
+            {/* {user ? (<h1>Hi {user.username}!</h1>) : ('')} */}
   </nav>
   )
 }

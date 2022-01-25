@@ -9,6 +9,7 @@ function Categories({ user, handleCatAndDiff, listOfCategories }) {
 
   return (
 <main className="page">
+  <div className="hi-choose"><h1>Hi {user.username}!</h1> <h3>Choose a Category and Level</h3></div>
 <ul className="cards">
 
     {listOfCategories.map((specificCategory) => (

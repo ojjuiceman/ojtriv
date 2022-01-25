@@ -84,3 +84,20 @@
   width: 50%;
   text-align: left;
 }
+
+.question-and-answer {
+  margin-top: 10%;
+  height: 300px;
+  border: solid;
+  margin-left: 340px;
+  margin-right: 340px;
+  padding-top: 67px;
+  border-radius: 20px;
+  background-color: rgb(99, 32, 6);
+  border-color: cornflowerblue;
+}
+
+.answer-section {
+  margin-top: 50px;
+
+}

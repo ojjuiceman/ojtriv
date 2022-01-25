@@ -605,7 +605,7 @@ console.log("scooooorer ", score)
  </div>
       }
       {showScore === false && allData === null &&
-				<>
+				<div className="question-and-answer">
 					<div className='question-section'>
 						<div className='question-count'>
 							<span>Question {currentQuestion + 1}</span>/{10}
@@ -618,7 +618,7 @@ console.log("scooooorer ", score)
               <button className="options-button" value={answerOption} onClick={(e) => handleAnswerOptionClick(e)}>{decodeHtml(answerOption)}</button>
 						))}
 					</div>
-				</>
+				</div>
       }
       {allData !== null &&
       <div>

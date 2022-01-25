@@ -8,18 +8,33 @@ import {Link} from "react-router-dom"
 function Registration() {
 
 return (
-  <>
+  <div className="registration">
   <nav className="main-nav">
 		<br></br>
-		<div className="welcome">Welcome to TriviApp! Sign up or Sign in to get started</div>
-		<br></br>
-		<div className="test"> Test Your Knowledge on a Variety of Topics and See How You Stack up Against Your Peers! </div>
 
-	<ul>
+		{/* <div id="sign-up-thing"> */}
+		{/* <Link className="signin" href="#0" to="/Login">Sign in</Link> */}
+
+		<div className="welcome">Welcome to TriviApp! Sign up to See How You Stack up Against Your Peers!</div>
+		{/* <Link className="signup" href="#0" to="/Signup">Sign up</Link> */}
+		{/* </div> */}
+
+
+		<br></br>
+		{/* <div className="test"> Test Your Knowledge on a Variety of Topics and See How You Stack up Against Your Peers! </div> */}
+
+<div className="yo">
+	<ul className="youall">
+<div className="hi">
 
 		<li><Link className="signin" href="#0" to="/Login">Sign in</Link></li>
 		<li><Link className="signup" href="#0" to="/Signup">Sign up</Link></li>
+		</div>
+
 	</ul>
+	</div>
+
+
 </nav>
 
 <div className="user-modal">
@@ -50,7 +65,7 @@ return (
 			<a href="#0" className="close-form">Close</a>
 		</div>
 	</div>
-  </>
+  </div>
 
   );
 }

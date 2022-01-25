@@ -41,6 +41,10 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 3.6%;
+  /* position: absolute; */
+  /* transform: translate(-50%); */
+  width: 100%;
 }
 
 .card {
@@ -91,4 +95,23 @@
   font-style: oblique;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #d35400;
+  font-size: 4em;
+  padding-top: 10px;
+}
+
+.navBar{
+  background-color: rgb(99, 32, 6);
+
+}
+/*
+.logout-button{
+  margin-right: 1000px;
+} */
+
+.log{
+  text-align: left;
+}
+
+.hi-choose {
+  margin-bottom: 50px;
 }

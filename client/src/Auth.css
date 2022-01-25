@@ -2,6 +2,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  /* border:  1px solid red; */
 }
 
 ul, li {
@@ -15,7 +16,7 @@ body {
 
 .main-nav {
   width: 90%;
-	max-width: 240px;
+	/* max-width: 240px; */
 	margin: 0 auto;
   height: 100%;
   cursor: pointer;
@@ -23,7 +24,7 @@ body {
 .main-nav ul {
 	position: absolute;
   width: 100%;
-	top: 40%;
+	top: 80%;
 	margin: 0;
 	padding: 0;
 }
@@ -421,8 +422,12 @@ input.has-padding {
 
 .welcome {
   /* background-color: crimson; */
-  border: solid;
-  border-color: chocolate;
+  /* border: solid; */
+  /* border-color: chocolate; */
+  font-family: 'Noto Sans', sans-serif;
+  color: rgb(214, 55, 55);
+  font-size: 30px;
+  margin-top: 30px;
 }
 
 .test {
@@ -430,6 +435,7 @@ input.has-padding {
   /* background-color: violet; */
   border: solid;
   border-color: chocolate;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,300);
@@ -496,4 +502,48 @@ input.has-padding {
   font-family: montserrat;
   border-radius:5px;
 }
+
+.registration {
+  background-image: url("https://media.istockphoto.com/vectors/trivia-vector-id1064066314?k=20&m=1064066314&s=612x612&w=0&h=ksa7C3kEh1Akv5eKUMXEVvqv5QTWKDfN10ZTDDVEmdE=");
+  background-size: cover;
+  height: 90vh;
+  }
+
+  #sign-up-thing{
+    display: flex;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%);
+    width: 60%;
+  }
+
+  .ul li {
+    text-align: center;
+  }
+
+  .youall {
+    text-align: center;
+    padding-top: 90px;
+    /* border: solid; */
+    margin-top: 400px;
+  }
+
+  .yo {
+    text-align: center;
+    margin-left: 510px;
+  }
+  /* .signin{
+    position: fixed;
+    top: 600px;
+  } */
+
+.signup {
+  padding: 540px;
+  background: blue;
+}
+
+.hi {
+  margin-top: 30px;
+}
+
 
