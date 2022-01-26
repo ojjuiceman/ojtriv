@@ -22,7 +22,7 @@ body {
 }
 
 .title, .showing {
-  background: #006400;
+  background: #d35400;
   color: #fff;
 }
 
@@ -62,12 +62,6 @@ tr:hover {
   border-right: 2px solid #eee;
 }
 
-.rank {
-  font-weight: bold;
-  font-size: 1.4em;
-  width: 10%;
-}
-
 .camper {
   text-align: left;
   white-space: nowrap;
@@ -94,7 +88,7 @@ tr:hover {
 
 a {
   /* color: #006400; */
-  color:violet;
+  color:rgb(180, 89, 25);
   font-weight: bold;
   text-decoration: none;
   transition: font-size .2s, text-shadow 2s;
@@ -102,7 +96,7 @@ a {
 
 a:hover {
   font-size: 1.1em;
-  text-shadow: 0 0 40px violet;
+  text-shadow: 0 0 40px rgb(180, 89, 25);
   /* text-shadow: 0 0 40px #0a0; */
 }
 
@@ -124,9 +118,12 @@ a:hover {
 }
 
 .rank {
-  background: crimson;
+  font-weight: bold;
+  font-size: 1.4em;
+  width: 10%;
+  background: rgb(153, 4, 28);
 }
 
 .combined {
-  background: purple;
+  background: rgb(153, 4, 28);
 }

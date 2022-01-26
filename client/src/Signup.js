@@ -42,7 +42,7 @@ function Signup({ handleLogin }) {
 	}
 
   return (
-<div id="signup">
+<div id="login">
 				<form className="form">
 					<p className="fieldset">
 						<label className="image-replace username" for="signup-username">Username</label>

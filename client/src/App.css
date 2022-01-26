@@ -1,3 +1,7 @@
+* {
+  /* border: dotted; */
+}
+
 .App {
   text-align: center;
 }
@@ -97,21 +101,76 @@
   color: #d35400;
   font-size: 4em;
   padding-top: 10px;
+  /* display: inline-block; */
+
 }
 
 .navBar{
   background-color: rgb(99, 32, 6);
-
 }
-/*
+
 .logout-button{
   margin-right: 1000px;
-} */
+  background-color: red;
+  color: whitesmoke;
+}
 
-.log{
-  text-align: left;
+#logout{
+  display: flex;
+  justify-content: left;
+  width: 30%;
+  color: blue;
+  /* display: inline-block; */
 }
 
 .hi-choose {
   margin-bottom: 50px;
+}
+
+.triviapp {
+  display: inline-block;
+  /* margin-top: -20px; */
+}
+
+
+
+
+
+
+.logout-button {
+  border-radius: 4px;
+  background-color:#d35400;
+  border: none;
+  padding: 10px;
+  margin: 2px;
+  transition: all 0.5s;
+}
+
+.logout-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.logout-button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.logout-button:hover span {
+  padding-right: 25px;
+}
+
+.logout-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.logout-button a {
+  color: #282c34;
 }

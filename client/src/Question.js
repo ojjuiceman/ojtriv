@@ -440,11 +440,14 @@ console.log("scooooorer ", score)
 
  <div className="answer-results">
  {resultsArray.map(r => r.yourWrongAnswer === undefined ? <div className="correct"><br></br>
- {resultsArray.indexOf(r) + 1}. {r.question} <br></br><br></br> CORRECT, IT'S  "{r.answer}"<br></br></div> : <div className="incorrect"><br></br>
+ {resultsArray.indexOf(r) + 1}. {r.question} <br></br><br></br> CORRECT, it's  "{r.answer}"<br></br></div> : <div className="incorrect"><br></br>
  {resultsArray.indexOf(r) + 1}. {r.question} <br></br><br></br> You Chose "{r.yourWrongAnswer}".
  But you're WRONG, Stupid! The correct answer is "{r.answer}"<br></br></div>)}
  </div>
 
+ <br></br>
+ <br></br>
+ <br></br>
  <br></br>
  <br></br>
  <br></br>
@@ -455,6 +458,8 @@ console.log("scooooorer ", score)
  {/* <div>
    {resultsArray.map(r => r.yourWrongAnswer === undefined ? <p>{r.question + " " + r.answer}</p> : <p>{r.question + " " + r.yourWrongAnswer + " WRONG, IT'S " + r.answer}</p>)}
  </div> */}
+
+
 
  <table>
 
@@ -501,17 +506,22 @@ console.log("scooooorer ", score)
 <tr><td>10</td></tr> */}
 
 
-
 </table>
 
 </div>
 
+<br></br>
+ <br></br>
+ <br></br>
+ <br></br>
+
+
  <h1>Compare your score with the TriviApp Graph!</h1>
  <div class="buttony">
-<div>Your Score</div>
-<div>Your High Score</div>
-<div>Average TriviApp score</div>
-<div>Your Average Score</div>
+<div className="scores">Your Score</div>
+<div className="scores">Your High Score</div>
+<div className="scores">Average TriviApp score</div>
+<div className="scores">Your Average Score</div>
 
 </div>
 <div class="chart-container">
@@ -598,7 +608,7 @@ console.log("scooooorer ", score)
 <br></br>
 <br></br>
 
-<div>
+<div className="play-again">
 <Link to="/Categories">Play Again!</Link>
 </div>
 

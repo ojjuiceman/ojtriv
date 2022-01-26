@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom"
 import React from "react";
+import './App.css';
+
 // import { Contain } from "./Styles/Contain.styled"
 
 
@@ -22,8 +24,8 @@ console.log("thats that user tho ", user)
   return(
   <nav className = "navBar">
     {/* <div className="triviapp">TriviApp</div> */}
-    <div className="log">
-            {user && <button className="logout-button" onClick={handleLogoutClick}>
+    <div id="logout">
+            {user && <button className="difficulty-level-button logout-button" onClick={handleLogoutClick}>
             <Link className="hello" to="/Registration" >Logout</Link>
             </button>}
             </div>
