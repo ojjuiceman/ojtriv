@@ -6,11 +6,12 @@ import './App.css';
 
 
 function Navbar({ user, setUser}) {
+  console.log("the userrrr ", user)
 
 
   function handleLogoutClick() {
     console.log("logged out", user)
-    fetch("/users", {
+    fetch("/Logout", {
         method: "DELETE"
     })
         .then(r=>r.json())

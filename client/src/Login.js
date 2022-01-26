@@ -86,7 +86,7 @@ function Login({ handleLogin, user, setUser }) {
 						<span className="error-message">Wrong password! Try again.</span>
 					</p>
 
-					<p className="fieldset">
+					<p className="fieldset check">
 						<input type="checkbox" id="remember-me" />
 						<label for="remember-me">Remember me</label>
 					</p>

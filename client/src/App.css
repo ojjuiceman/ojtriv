@@ -124,7 +124,7 @@
 }
 
 .hi-choose {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .triviapp {
@@ -144,6 +144,7 @@
   padding: 10px;
   margin: 2px;
   transition: all 0.5s;
+  position: absolute;
 }
 
 .logout-button span {
@@ -173,4 +174,8 @@
 
 .logout-button a {
   color: #282c34;
+}
+
+.hi-user {
+  margin-top: 15px;
 }

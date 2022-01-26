@@ -31,6 +31,8 @@ h1 {
   height: 500px;
   /*border: solid 1px #bbb;*/
   background-color: rgba(255,255,255,0.055);
+  margin-top: 50px;
+  /* padding-top: 10px; */
 /*  -webkit-box-shadow: 0 8px 6px -6px #444;
 */}
 
@@ -277,3 +279,28 @@ h1 {
 .scores {
   font-size: 20px;
 }
+
+.uno {
+  padding: 0px;
+  width: 70px;
+  /* margin-right: 50px; */
+  }
+
+  .dos {
+  padding: 0px;
+  width: 70px;
+  margin-left: 15px;
+  }
+
+  .tres {
+    padding: 0px;
+    width: 70px;
+    margin-left: 10px;
+
+  }
+
+  .quatro {
+    padding: 0px;
+    width: 70px;
+  margin-left: 10px;
+  }

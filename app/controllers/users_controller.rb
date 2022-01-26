@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     user = User.find_by(id: session[:user_id])
     if user
-        render json:user, status: :ok, serializer: ShowUserSerializer
+        render json:user, status: :ok
     else
         render json: { error: "Not authorized" }, status: :unauthorized
     end
@@ -33,7 +33,7 @@ end
 
 def create
   user = User.create!(user_params)
-  # session[:user_id] = user.id
+  session[:user_id] = user.id
   # byebug
   render json: user, status: :created
 end

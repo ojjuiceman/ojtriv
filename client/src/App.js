@@ -9,7 +9,6 @@ import Login from "./Login"
 import Categories from "./Categories"
 import Navbar from "./Navbar"
 import Question from "./Question"
-// import CssInJs from "./CssInJs"
 // import Stats from "./Stats"
 
 
@@ -63,7 +62,6 @@ function App() {
   return (
 <div className="app">
     <Navbar user={user} setUser={setUser}/>
-    {/* <CssInJs /> */}
 
     <Switch>
 
@@ -80,7 +78,7 @@ function App() {
         </Route>
 
         <Route path="/Categories">
-              <Categories user={user} handleCatAndDiff={handleCatAndDiff} listOfCategories={listOfCategories}/>
+            <Categories user={user} setUser={setUser} handleCatAndDiff={handleCatAndDiff} listOfCategories={listOfCategories}/>
         </Route>
 
         <Route path="/Question">
@@ -100,19 +98,4 @@ function App() {
 export default App;
 
 
-{/* <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div> */}
+

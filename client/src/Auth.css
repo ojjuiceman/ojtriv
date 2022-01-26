@@ -558,3 +558,7 @@ input.has-padding {
   font-size: 50px;
   font-style: italic;
 }
+
+.check {
+  display: flex;
+}

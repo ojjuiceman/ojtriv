@@ -55,7 +55,7 @@
 .correct {
   background-color: rgb(0, 73, 0);
   border: solid;
-  border-color: black;
+  border-color: #d35400;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   /* transition: 0.3s;
@@ -79,7 +79,7 @@
 .incorrect {
   background-color: rgb(148, 6, 6);
   border: solid;
-  border-color: black;
+  border-color: #d35400;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   /* transition: 0.3s;
@@ -128,5 +128,35 @@
 
 .question-text {
   font-family: 'Noto Sans', sans-serif;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
+.whoopsie {
+  font-size: 60px;
+}
+
+.whoops-message {
+  margin: 100px;
+  font-size: 30px;
+}
+
+.trivia-link {
+  font-size: 50px;
+}
+
+.trivia-link:hover {
+  font-size: 3.5em;
+}
+
+.whoops-back-link {
+  color: #d35400;
+  font-size: 40px;
+
+}
+
+.whoops-back-link:hover {
+  color: #d35400;
+  font-size: 3.5em;
+
+}

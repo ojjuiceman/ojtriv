@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './Auth.css';
-import {Link} from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 // import { useHistory } from "react-router-dom";
 
 
@@ -11,8 +11,9 @@ function Signup({ handleLogin }) {
 	const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 	const [passwordConfirmation, setPasswordConfirmation] = useState("");
+	const [agreed, setAgreed] = useState(false)
 
-	// const history = useHistory();
+  const history = useHistory()
 
 
 	function handleSubmit(e) {
@@ -34,11 +35,20 @@ function Signup({ handleLogin }) {
 				password_confirmation: passwordConfirmation
 			}),
     })
-      .then((r) => r.json())
+			.then((r) => r.json())
+			.catch((err) => {
+        console.log("behold the error", err);
+      })
       .then((data) => {
-        handleLogin(data)
+				if (data.errors) {
+          alert("Signup Failed")
+          console.log("log the error again ", data.errors);
+        } else {
+				handleLogin(data)
+				history.push('/Categories')
         console.log("the data from the Signup fetch", data)
-      });
+			}
+			});
 	}
 
   return (
@@ -74,18 +84,24 @@ function Signup({ handleLogin }) {
 						<span className="error-message">Password does not match</span>
 					</p>
 
-					<p className="fieldset">
-						<input type="checkbox" id="accept-terms"/>
+					<p className="fieldset check">
+						<input type="checkbox" id="accept-terms" onChange={()=> {
+							setAgreed(agreed => !agreed)
+						}}/>
 						<label for="accept-terms">I agree to the <a className="accept-terms" href="#0">Terms</a></label>
 					</p>
 
 					</form>
 
 
-					<p className="fieldset">
-					<Link to="/Categories" onClick={handleSubmit}>
-						<input className="full-width has-padding" type="submit" value="Create Account"/>
-						</Link>
+				{/* <p className="fieldset" onClick={handleLogSubmit}>
+						<input className="full-width has-padding" type="submit" value="Login"/>
+					</p> */}
+
+          <p className="fieldset" onClick={handleSubmit}>
+					{/* <Link to="/Categories" > */}
+						<input className="full-width has-padding" type="submit" value="Create Account" disabled={!agreed}/>
+						{/* </Link> */}
 					</p>
 
 

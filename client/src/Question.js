@@ -518,10 +518,10 @@ console.log("scooooorer ", score)
 
  <h1>Compare your score with the TriviApp Graph!</h1>
  <div class="buttony">
-<div className="scores">Your Score</div>
-<div className="scores">Your High Score</div>
-<div className="scores">Average TriviApp score</div>
-<div className="scores">Your Average Score</div>
+<div className="scores uno">Your Score</div>
+<div className="scores dos">Your High Score</div>
+<div className="scores tres">Average TriviApp score</div>
+<div className="scores quatro">Your Average Score</div>
 
 </div>
 <div class="chart-container">
@@ -632,11 +632,13 @@ console.log("scooooorer ", score)
       }
       {allData !== null &&
       <div>
-        <h1>Aloha!!</h1>
-        <h4>I'm so sorry that you've arrived at this page. It appears the quiz you've clicked on is unavailable. If your
-          urge to test your trivia is still blazing, go back and try a different cateogry or level. Otherwise, feel free
-          to click on one of these links to be directed to some material related to {category === 13 ? "musicals and theater" : category === 30 ? "gadgets" : "whatever"} :)</h4>
-          <div>{category === 13 ? <a href="https://www.w3schools.com/">Visit W3Schools.com</a> : category === 19 ? <a href="https://www.mathgames.com/">Math Games!</a> : "jejeje"}</div>
+        <h1 className="whoopsie">Whoops!</h1>
+        <h4 className="whoops-message">The {category === 13 ? "Musicals and Theater" : category === 19 ? "Mathematics" : category === 24 ? "Politics" : category === 25 ? "Art" : category === 26 ? "Celebrities" : category === 30 ? "Gadgets" : " whatever"} quiz is currently under construction. Please go back and try another quiz.</h4>
+        <Link to="/Categories" className="whoops-back-link">Back</Link>
+          {/* <div>{category === 13 ? <a className="trivia-link" href="https://www.usefultrivia.com/music_trivia/broadway_musicals_trivia.html">Musicals Trivia!</a>
+          : category === 19 ? <a className="trivia-link" href="https://www.triviaquestionss.com/math-trivia-questions-and-answers/">Math Trivia!</a> : category === 24 ? <a className="trivia-link" href="https://www.usefultrivia.com/political_trivia/">Politics Trivia!</a>
+          : category === 25 ? <a className="trivia-link" href="https://www.usefultrivia.com/art_trivia/">Art Trivia!</a> : category === 26 ? <a className="trivia-link" href="https://www.usefultrivia.com/celebrity_trivia/">Celebrity Trivia!</a>
+          : category === 30 ? <a className="trivia-link" href="https://www.britannica.com/quiz/electronics-amp-gadgets-quiz">Electronics and Gadgets Trivia!</a> : "Nothing to see here"}</div> */}
         </div>
       }
 

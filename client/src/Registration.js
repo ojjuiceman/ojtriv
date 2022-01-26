@@ -7,7 +7,7 @@ import {Link} from "react-router-dom"
 
 function Registration() {
 
-return (
+	return (
   <div className="registration">
   <nav className="main-nav">
 		<br></br>

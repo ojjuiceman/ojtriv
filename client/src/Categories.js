@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CategoryCard from "./CategoryCard"
 import './App.css';
 
 
-function Categories({ user, handleCatAndDiff, listOfCategories }) {
-  console.log("heres the user in categories function ", user)
+function Categories({ user, setUser, handleCatAndDiff, listOfCategories }) {
+  // console.log("heres the user in categories function ", user)
 
+  // useEffect(() => {
+  //   fetch("/me").then((response) => {
+  //     if (response.ok) {
+  //       response.json().then((user) => setUser(user));
+  //     }
+  //     else{
+  //       console.log(response)
+  //     }
+  //   });
+  // }, [])
 
   return (
 <main className="page">
-  <div className="hi-choose"><h1>Hi {user.username}!</h1> <h3>Choose a Category and Level</h3></div>
+ {user &&  <div className="hi-choose"><h1 className="hi-user">Hi {user.username}!</h1> <h3>Choose a Category and Level</h3></div>}
 <ul className="cards">
 
-    {listOfCategories.map((specificCategory) => (
+    {user && listOfCategories.map((specificCategory) => (
 <CategoryCard specificCategory={specificCategory} listOfCategories={listOfCategories} handleCatAndDiff={handleCatAndDiff}/>
 ))
 }
