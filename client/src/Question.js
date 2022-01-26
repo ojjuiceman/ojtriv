@@ -461,23 +461,24 @@ console.log("scooooorer ", score)
 
 
 
- <table>
+ <table className="taby">
 
  <thead>
- <tr>
+ <tr className="toprow">
    <th class="rank">Rank</th>
-   <th>Player</th>
+   <th className="play">Player</th>
    {/* <th onClick={sortByHighScore}>High Score</th> */}
    {/* <th onClick={sortByHighestAverage}>Average Score(rn shows high score)</th> */}
-   <th></th>
+   <th className="play"></th>
    <th onClick={sortByHighestCumulative} class="combined">Combined Score</th>
    </tr>
 </thead>
 
 {allLeaderEntries.sort((a, b) => a.cumulative_score - b.cumulative_score).reverse().map(entry => <tr>
  <td class="rank">{allLeaderEntries.indexOf(entry) + 1}</td>
- <td>{entry.user.username}</td>
- <td>-----------------------------------------------------------------></td>
+ <td className="player-and-arrow">{entry.user.username}</td>
+ <td className="player-and-arrow">-----------------------------------------------------------------></td>
+
  {/* <td>{entry.high_score}</td> */}
  <td class="combined">{entry.cumulative_score}</td>
  </tr>).slice(0, 15)}
@@ -504,7 +505,6 @@ console.log("scooooorer ", score)
 <tr><td>8</td></tr>
 <tr><td>9</td></tr>
 <tr><td>10</td></tr> */}
-
 
 </table>
 

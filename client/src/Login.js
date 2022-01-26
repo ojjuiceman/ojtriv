@@ -66,6 +66,8 @@ function Login({ handleLogin, user, setUser }) {
 
 
   return (
+    <>
+    <div className="login-message">Log in to get started!</div>
 <div id="login">
 
 				<form className="form">
@@ -100,11 +102,16 @@ function Login({ handleLogin, user, setUser }) {
 
 
           {/* <Link to="/Registration" ><button><a href="#0" className="cd-close-form">Registration</a></button></Link> */}
-          <Link to="/Registration" ><button className="cd-close-form">Registration</button></Link>
+          {/* <br></br>
+          <br></br>
+          <br></br> */}
+
+          <Link className="regy" to="/Registration" ><button className="cd-close-form">Registration</button></Link>
 
           {/* <a href="#0" className="cd-close-form">Registration</a> */}
 
 			</div>
+      </>
   )
 }
 

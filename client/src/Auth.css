@@ -390,7 +390,7 @@ input.has-padding {
 }
 
 .accept-terms {
-	color: #F64747;
+	color: #283644;
 	text-decoration: none;
 	padding: 0 1px 1px 2px;
 	border-bottom: 1px solid rgba(246, 71, 71, .0);
@@ -403,7 +403,7 @@ input.has-padding {
 .accept-terms:hover {
 	animation: borderslide-2px .5s;
 	padding-bottom: 2px;
-	border-bottom: 1px solid rgba(246, 71, 71, 1);
+	border-bottom: 1px solid #283644;
 }
 
 #login, #signup, #reset-password {
@@ -415,8 +415,8 @@ input.has-padding {
 }
 
 #login {
-  margin: 150px;
-  padding: 44px;
+  margin: 15px 150px 150px 150px;
+  padding:44px;
   background: #d35400;
 }
 
@@ -542,4 +542,19 @@ input.has-padding {
   margin-top: 30px;
 }
 
+.cd-close-form {
+  display: flex;
+  align-self: flex-end;
+}
 
+/* .regy {
+  display: flex;
+  align-self: flex-end;
+} */
+
+.login-message {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 50px;
+  font-style: italic;
+}

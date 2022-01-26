@@ -42,6 +42,10 @@ function Signup({ handleLogin }) {
 	}
 
   return (
+
+<>
+<div className="login-message">Sign up to get started!</div>
+
 <div id="login">
 				<form className="form">
 					<p className="fieldset">
@@ -88,6 +92,8 @@ function Signup({ handleLogin }) {
 
           <Link to="/Registration" ><button className="cd-close-form">Registration</button></Link>
 			</div>
+			</>
+
   )
 }
 

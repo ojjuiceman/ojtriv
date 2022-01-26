@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 10px;
   border-radius: 3px 3px 0 0;
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid #d35400;
   cursor: default;
   position: sticky;
   top: 0;
@@ -41,7 +41,7 @@ th {
   position: sticky;
   top: 53px;
   font-size: 1.2em;
-  border-bottom: 5px solid #eee;
+  border-bottom: 5px solid #d35400;
   transition: background .2s, color .1s;
   user-select: none;
 }
@@ -60,6 +60,7 @@ tr:hover {
 
 .camper, .recent {
   border-right: 2px solid #eee;
+
 }
 
 .camper {
@@ -122,8 +123,31 @@ a:hover {
   font-size: 1.4em;
   width: 10%;
   background: rgb(153, 4, 28);
+  background-color: #282c34;
+
 }
 
 .combined {
   background: rgb(153, 4, 28);
+  background-color: #282c34;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.player-and-arrow {
+  background-color: #282c34;
+}
+
+.taby {
+  border: solid #d35400;
+}
+
+.play {
+  background-color: #282c34;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.toprow {
+  border: blue;
 }
