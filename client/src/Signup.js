@@ -117,8 +117,9 @@ function Signup({ handleLogin }) {
 					</p>
 
 
-
+					<div className="reg-button">
           <Link to="/Registration" ><button className="cd-close-form">Registration</button></Link>
+					</div>
 			</div>
 			</>
 

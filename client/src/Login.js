@@ -110,11 +110,13 @@ function Login({ handleLogin, user, setUser }) {
           <br></br>
           <br></br> */}
 
+       <div className="reg-button">
           <Link className="regy" to="/Registration" ><button className="cd-close-form">Registration</button></Link>
-
+          </div>
           {/* <a href="#0" className="cd-close-form">Registration</a> */}
 
 			</div>
+
       </>
   )
 }

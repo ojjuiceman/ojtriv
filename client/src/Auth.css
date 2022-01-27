@@ -418,6 +418,7 @@ input.has-padding {
   margin: 15px 150px 150px 150px;
   padding:44px;
   background: #d35400;
+  border-radius: 10px;
 }
 
 .welcome {
@@ -561,4 +562,9 @@ input.has-padding {
 
 .check {
   display: flex;
+}
+
+.reg-button {
+position: absolute;
+margin-top: 10px;
 }
