@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import './App.css';
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route, Redirect } from "react-router-dom"
 import Registration from "./Registration"
 import Signup from "./Signup"
 import Login from "./Login"
@@ -63,7 +63,10 @@ function App() {
 <div className="app">
     <Navbar user={user} setUser={setUser}/>
 
+
     <Switch>
+
+<Redirect exact from="/" to="/Registration" />
 
         <Route path="/Registration">
               <Registration />
