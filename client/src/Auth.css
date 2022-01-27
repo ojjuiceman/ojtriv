@@ -505,7 +505,7 @@ input.has-padding {
 }
 
 .registration {
-  background-image: url("https://media.istockphoto.com/vectors/trivia-vector-id1064066314?k=20&m=1064066314&s=612x612&w=0&h=ksa7C3kEh1Akv5eKUMXEVvqv5QTWKDfN10ZTDDVEmdE=");
+  background-image: url("./assets/trivia-pic.jpeg");
   background-size: cover;
   height: 90vh;
   }
