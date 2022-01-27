@@ -477,7 +477,7 @@ console.log("scooooorer ", score)
 {allLeaderEntries.sort((a, b) => a.cumulative_score - b.cumulative_score).reverse().map(entry => <tr>
  <td class="rank">{allLeaderEntries.indexOf(entry) + 1}</td>
  <td className="player-and-arrow">{entry.user.username}</td>
- <td className="player-and-arrow">-----------------------------------------------------------------></td>
+ <td className="player-and-arrow">---------------------------------------------------------------------></td>
 
  {/* <td>{entry.high_score}</td> */}
  <td class="combined">{entry.cumulative_score}</td>
