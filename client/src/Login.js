@@ -7,6 +7,8 @@ import { Link, useHistory } from "react-router-dom"
 function Login({ handleLogin, user, setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordShown3, setPasswordShown3] = useState("");
+
   console.log("here is use history ", useHistory)
   // const [userData, setUserData] = useState(null);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -63,7 +65,9 @@ function Login({ handleLogin, user, setUser }) {
   //   });
   // }
 
-
+  function togglePassword3() {
+		setPasswordShown3(passwordShown3 => !passwordShown3)
+	}
 
   return (
     <>
@@ -80,9 +84,9 @@ function Login({ handleLogin, user, setUser }) {
 
 					<p className="fieldset">
 						<label className="image-replace password" for="signin-password">Password</label>
-						<input className="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password" value={password}
+						<input className="full-width has-padding has-border" id="signin-password" type={passwordShown3 ? "text" : "password"}  placeholder="Password" value={password}
         onChange={(e) => setPassword(e.target.value)}/>
-						<a href="#0" className="hide-password">Show</a>
+						<a href="#0" className="hide-password" onClick={togglePassword3}>Show</a>
 						<span className="error-message">Wrong password! Try again.</span>
 					</p>
 

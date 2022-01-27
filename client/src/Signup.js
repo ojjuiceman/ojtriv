@@ -12,6 +12,10 @@ function Signup({ handleLogin }) {
   const [password, setPassword] = useState("");
 	const [passwordConfirmation, setPasswordConfirmation] = useState("");
 	const [agreed, setAgreed] = useState(false)
+	const [passwordShown, setPasswordShown] = useState("");
+	const [passwordShown2, setPasswordShown2] = useState("");
+
+
 
   const history = useHistory()
 
@@ -51,6 +55,14 @@ function Signup({ handleLogin }) {
 			});
 	}
 
+	function togglePassword() {
+		setPasswordShown(passwordShown => !passwordShown)
+	}
+
+	function togglePassword2() {
+		setPasswordShown2(passwordShown2 => !passwordShown2)
+	}
+
   return (
 
 <>
@@ -72,15 +84,15 @@ function Signup({ handleLogin }) {
 
 					<p className="fieldset">
 						<label className="image-replace password" for="signup-password">Password</label>
-						<input className="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-						<a href="#0" className="hide-password">Show</a>
+						<input className="full-width has-padding has-border" id="signup-password" type={passwordShown ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+						<a href="#0" className="hide-password" onClick={togglePassword}>Show</a>
 						<span className="error-message">Your password has to be at least 6 characters long!</span>
 					</p>
 
            <p className="fieldset">
           <label className="image-replace password" for="signup-password">Confirm Password</label>
-						<input className="full-width has-padding has-border" id="signup-password" type="password" placeholder="Confirm Password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}/>
-            <a href="#0" className="hide-password">Show</a>
+						<input className="full-width has-padding has-border" id="signup-password" type={passwordShown2 ? "text" : "password"} placeholder="Confirm Password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}/>
+            <a href="#0" className="hide-password" onClick={togglePassword2}>Show</a>
 						<span className="error-message">Password does not match</span>
 					</p>
 
