@@ -5,5 +5,7 @@ class User < ApplicationRecord
   has_many :leaderboard_entries
 
   validates :username, presence: true
+  validates :username, uniqueness: true
+
 
 end
