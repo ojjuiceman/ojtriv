@@ -33,9 +33,11 @@ end
 
 def create
   user = User.create!(user_params)
-  session[:user_id] = user.id
+  if user.valid?
+    session[:user_id] = user.id
   # byebug
-  render json: user, status: :created
+    render json: user, status: :created
+  end
 end
 
   def destroy

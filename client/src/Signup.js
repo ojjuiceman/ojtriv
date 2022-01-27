@@ -45,7 +45,7 @@ function Signup({ handleLogin }) {
       })
       .then((data) => {
 				if (data.errors) {
-          alert("Signup Failed")
+          alert(data.errors)
           console.log("log the error again ", data.errors);
         } else {
 				handleLogin(data)
