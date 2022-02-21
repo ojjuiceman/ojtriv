@@ -260,8 +260,8 @@ h1 {
 .buttony {
   margin: 80px 250px 10px 250px;
   /* background: crimson; */
-  display: flex;
-  justify-content: space-evenly;
+  /* display: flex; */
+  /* justify-content: space-evenly; */
 }
 
 .one {
@@ -283,24 +283,37 @@ h1 {
 .uno {
   padding: 0px;
   width: 70px;
-  /* margin-right: 50px; */
+  display: inline-block;
+
+  margin-left: 120px;
+  /* padding-right: 120px; */
+
   }
 
   .dos {
   padding: 0px;
   width: 70px;
-  margin-left: 15px;
+  display: inline-block;
+  margin-left: 120px;
+
   }
 
   .tres {
     padding: 0px;
     width: 70px;
-    margin-left: 10px;
+    display: inline-block;
+
+    margin-left: 120px;
+
 
   }
 
   .quatro {
     padding: 0px;
     width: 70px;
-  margin-left: 10px;
+    display: inline-block;
+
+    margin-left: 120px;
+    margin-right: 120px;
+
   }
