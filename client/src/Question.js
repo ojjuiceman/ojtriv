@@ -135,9 +135,6 @@ function decodeHtml(html) {
 
   function handleAnswerOptionClick(e) {
     let filteredArray = correctArrayState.filter(correctAns => e.target.value === correctAns)
-    console.log("hence correct array state ", correctArrayState)
-    console.log("target value ", e.target.value)
-    console.log("this is the filtered array ", filteredArray)
 
 
     if (filteredArray.length !== 0) {
