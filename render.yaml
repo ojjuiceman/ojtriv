@@ -1,7 +1,7 @@
 databases:
   - name: TRIVIAAPPPROJECTOJV
-    databaseName: TRIVIAAPPPROJECTOJV
-    user: TRIVIAAPPPROJECTOJV
+    databaseName: leaderboard
+    user: triviaoj
 
 services:
   - type: web
