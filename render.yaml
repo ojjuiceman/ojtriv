@@ -1,18 +1,18 @@
 databases:
-  - name: TRIVIAAPPPROJECTOJV
-    databaseName: leaderboard
-    user: triviaoj
+  - name: ojtriv
+    databaseName: ojtriv
+    user: ojtriv
 
 services:
   - type: web
-    name: TRIVIAAPPPROJECTOJV
+    name: ojtriv
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: TRIVIAAPPPROJECTOJV
+          name: ojtriv
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
