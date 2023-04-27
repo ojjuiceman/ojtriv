@@ -5,6 +5,7 @@ databases:
 
 services:
   - type: web
+    plan: free
     name: ojtriv
     env: ruby
     buildCommand: "./bin/render-build.sh"
